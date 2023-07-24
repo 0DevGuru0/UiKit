@@ -1,0 +1,12 @@
+gitops:
+  manifest_projects:
+  - id: avidarvand/avidkit
+    default_namespace: avidkit
+    paths:
+    - glob: '/**/*.{yaml,yml,json}'
+
+
+ci_access:
+  groups:
+    - id: avidarvand
+      default_namespace: avidkit

@@ -1,0 +1,17 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="icon/play">
+    <path id="Shape" fill-rule="evenodd" clip-rule="evenodd"
+      d="M19.5408 11.1605L5.54076 2.16046C4.87525 1.73263 4 2.21047 4 3.00164V21.0016C4 21.7928 4.87525 22.2706 5.54076 21.8428L19.5408 12.8428C20.1531 12.4492 20.1531 11.5541 19.5408 11.1605ZM17.1507 12.0016L6 19.17V4.8333L17.1507 12.0016Z"
+      fill="black" />
+    <mask id="mask0_0_87930" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="2" width="16" height="21">
+      <path id="Shape_2" fill-rule="evenodd" clip-rule="evenodd"
+        d="M19.5408 11.1605L5.54076 2.16046C4.87525 1.73263 4 2.21047 4 3.00164V21.0016C4 21.7928 4.87525 22.2706 5.54076 21.8428L19.5408 12.8428C20.1531 12.4492 20.1531 11.5541 19.5408 11.1605ZM17.1507 12.0016L6 19.17V4.8333L17.1507 12.0016Z"
+        fill="white" />
+    </mask>
+    <g mask="url(#mask0_0_87930)">
+      <g id="COLOR/ black">
+        <rect id="Color/Black" width="24" height="24" fill="black" />
+      </g>
+    </g>
+  </g>
+</svg>

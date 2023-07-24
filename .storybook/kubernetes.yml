@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storybook
+  namespace: avidkit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: storybook
+  template:
+    metadata:
+      labels:
+        app: storybook
+        commit-short-sha: "commit_${CI_COMMIT_SHORT_SHA}"
+    spec:
+      restartPolicy: Always
+      containers:
+        - image: 575302467300.dkr.ecr.eu-central-1.amazonaws.com/avidkit:${CI_COMMIT_SHORT_SHA}
+          imagePullPolicy: Always
+          name: storybook
+          resources:
+            requests:
+              memory: '64Mi'
+              cpu: '100m'
+            limits:
+              memory: '256Mi'
+              cpu: '1000m'
+
+          ports:
+            - containerPort: 80
+
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 90
+            periodSeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 1
+
+          readinessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 90
+            periodSeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 1
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: storybook
+  namespace: avidkit
+spec:
+  selector:
+    app: storybook
+  ports:
+    - port: 80
+      targetPort: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-http
+  name: avidkit
+  namespace: avidkit
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: avidkit.avidcloud.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: storybook
+            port:
+              number: 80
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - avidkit.avidcloud.io
+    secretName: storybook-avidkit-avidcloud-io

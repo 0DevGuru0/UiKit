@@ -1,0 +1,22 @@
+{
+  "name": "@avidkit/builder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "build-package": "./bin/build-package.js"
+  },
+  "dependencies": {
+    "@swc/core": "^1.3.14",
+    "commander": "^10.0.0",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^10.1.0",
+    "zx": "^7.1.1"
+  },
+  "repository": "https://gitlab.com/avidarvand/avidkit",
+  "publishConfig": {
+    "access": "restricted",
+    "directory": "_release/package",
+    "@avidkit:registry": "https://gitlab.com/api/v4/projects/30727907/packages/npm/"
+  }
+}

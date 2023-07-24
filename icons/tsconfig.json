@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["src/**/*", "icons.stories.tsx", "IconsGellery.tsx"],
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
+}

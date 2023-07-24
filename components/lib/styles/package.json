@@ -1,0 +1,42 @@
+{
+  "name": "@avidkit/styles",
+  "version": "4.0.0",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "typescript-main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "ts-entry": "./src/index.ts",
+  "scripts": {
+    "build": "build-package"
+  },
+  "peerDependencies": {
+    "@swc/helpers": "^0.4.11",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@avidkit/builder": "workspace:*",
+    "@swc/helpers": "^0.4.11",
+    "@types/react": "^18.8.35",
+    "@types/styled-components": "^5.1.15",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.6"
+  },
+  "dependencies": {
+    "stylis": "^4.0.10",
+    "stylis-plugin-rtl": "^1.1.0"
+  },
+  "files": [
+    "src",
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "repository": "https://gitlab.com/avidarvand/avidkit",
+  "publishConfig": {
+    "access": "restricted",
+    "directory": "_release/package",
+    "@avidkit:registry": "https://gitlab.com/api/v4/projects/30727907/packages/npm/"
+  },
+  "sideEffects": false
+}

@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  store-design:
+    build:
+      context: ./
+    tty: true
+    stdin_open: true
+    restart: always
+    ports:
+      - 4677:6006

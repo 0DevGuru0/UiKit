@@ -1,0 +1,25 @@
+# yarn configs
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+build-storybook.log
+/node_modules
+/lib
+/esmlib
+/storybook-build
+
+dist
+_release
+package.tgz
+
+.DS_Store
+*/**/node_modules/**
+
+.idea/
+.turbo
+tsconfig.tsbuildinfo

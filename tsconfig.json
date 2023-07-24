@@ -1,0 +1,32 @@
+{
+  "include": ["components/**/*", ".storybook/**/*", "typings/**/*", "tools/**/*", "icons/IconsGallery.tsx", "icons/icons.stories.tsx"],
+  "exclude": ["node_modules", "_release", "dist", "build", ".yarn"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es5",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "sourceMap": true,
+    "allowJs": false,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "$storybook/*": [".storybook/*"],
+    },
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "isolatedModules": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "incremental": true,
+    "resolveJsonModule": true
+  }
+}

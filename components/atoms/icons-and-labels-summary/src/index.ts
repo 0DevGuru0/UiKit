@@ -1,0 +1,1 @@
+export { IconsAndLabelsSummary } from './IconsAndLabelsSummary';

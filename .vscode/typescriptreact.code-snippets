@@ -1,0 +1,53 @@
+{
+  "Story Book": {
+    "prefix": "story",
+    "body": [
+      "import { StoryFC } from '$$storybook/StoryFC';",
+      "import { ${TM_FILENAME/[.].*/$1/}, ${TM_FILENAME/[.].*/$1/}Props } from './${TM_FILENAME/[.].*/$1/}';",
+      "",
+      "export default {",
+      "\ttitle: 'Atoms /',",
+      "\tcomponent: ${TM_FILENAME/[.].*/$1/},",
+      "\tparameters: { background: { noPadding: true } },",
+      "};",
+      "",
+      "export const ${TM_FILENAME/[.].*/$1/}Cmp: StoryFC<${TM_FILENAME/[.].*/$1/}Props> = (args) => {",
+      "\treturn <${TM_FILENAME/[.].*/$1/} {...args} />;",
+      "};",
+      "",
+      "${TM_FILENAME/[.].*/$1/}Cmp.args = {}",
+      "",
+      "${TM_FILENAME/[.].*/$1/}Cmp.parameters = {",
+      "\tzeplinLink: '',",
+      "};",
+      "\n",
+      ""
+    ],
+    "description": "Story Book"
+  },
+  "TypeScript React Function Component": {
+    "prefix": "rcomp",
+    "body": [
+      "export interface ${TM_FILENAME/[.].*/$1/}Props {",
+      "\t$1",
+      "}",
+      "",
+      "export const ${TM_FILENAME/[.].*/$1/} = (props: ${TM_FILENAME/[.].*/$1/}Props) => {",
+      "\treturn ${2:<div>$3</div>}",
+      "};",
+    ],
+    "description": "React Function Component in TypeScript"
+  },
+  "Log to console": {
+    "prefix": "lg",
+    "body": ["console.log(` ==> $1 ==> `, $1)"],
+    "description": "Log output to the console"
+  },
+  "Console with variable appended": {
+    "prefix": "logv",
+    "body": [
+     "console.log('$1: ', $1);"
+    ],
+    "description": "log variable"
+  }
+}
